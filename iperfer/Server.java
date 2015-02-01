@@ -22,9 +22,9 @@ public class Server {
 			while ((n = inputStream.read(data)) != -1) {
 				dataReceived += n;
 			}
+			time = System.currentTimeMillis() - time;
 			clientSocket.close();
 			serverSocket.close();
-			time = System.currentTimeMillis() - time;
 			time /= 1000;
 			dataReceived /= 1000;
 			double rate = (dataReceived * 8.0) / (1000 * time);
