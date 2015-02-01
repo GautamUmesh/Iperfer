@@ -24,14 +24,13 @@ public class Server {
 			}
 			clientSocket.close();
 			serverSocket.close();
-			time -= System.currentTimeMillis();
+			time = System.currentTimeMillis() - time;
 			time /= 1000;
 			dataReceived /= 1000;
 			double rate = (dataReceived * 8.0) / (1000 * time);
 			System.out.println("received=" + dataReceived + " KB rate="
-					+ String.format("%.3s", rate) + " Mbps");
+					+ String.format("%.3f", rate) + " Mbps");
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
 

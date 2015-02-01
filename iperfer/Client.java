@@ -28,7 +28,7 @@ public class Client {
 			socket.close();
 			double rate = (numKbSent * 8.0) / (1000 * time);
 			System.out.println("sent=" + numKbSent + " KB rate="
-					+ String.format("%.3s", rate) + " Mbps");
+					+ String.format("%.3f", rate) + " Mbps");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
