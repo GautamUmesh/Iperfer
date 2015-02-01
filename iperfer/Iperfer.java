@@ -5,7 +5,7 @@ public class Iperfer {
 		String arg = "";
 		boolean client = false;
 		boolean clientOrServer = false;
-		int time = 0;
+		long time = 0;
 		int port = 0;
 		String host = "";
 		
@@ -83,10 +83,14 @@ public class Iperfer {
             }
         }
 		
-		if (client)
-			System.out.println("Client: Host " + host + " Port " + port + " Time " + time);
+		if (client) {
+			Client tcpClient = new Client(host, port, time);
+			tcpClient.execute();
+		}
 		
-		if (!client)
-			System.out.println("Server: Port " + port);
+		if (!client) {
+			Server tcpServer = new Server(port);
+			tcpServer.execute();
+		}
 	}
 }
