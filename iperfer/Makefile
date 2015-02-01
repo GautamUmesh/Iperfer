@@ -1,7 +1,12 @@
-all: Iperfer.class
+JAVAC=javac
+sources = $(wildcard *.java)
+classes = $(sources:.java=.class)
 
-Iperfer.class: Iperfer.java
-	javac Iperfer.java
+all: $(classes)
 
-clean:
-	rm -rf *.class
+clean: 
+	rm -f *.class
+
+%.class: %.java 
+	$(JAVAC) $<
+
