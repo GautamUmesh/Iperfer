@@ -2,7 +2,7 @@
 
 Expected results:
 	Latency: 80 ms
-	Throughput: 20M bps
+	Throughput: 20 Mbps
 
 Measured results:
 	Latency: 80.437 ms (RTT: 160.874 ms) 
