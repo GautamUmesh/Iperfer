@@ -19,8 +19,8 @@ public class Client {
 			byte data[] = new byte[1000];
 			OutputStream outstream = socket.getOutputStream();
 			long numKbSent = 0;
-			long currentTime = 0;
 			long startTime = System.currentTimeMillis();
+			long currentTime = 0;
 			while (currentTime - startTime < (time * 1000)) {
 				outstream.write(data);
 				outstream.flush();
